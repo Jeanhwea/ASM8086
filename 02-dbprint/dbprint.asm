@@ -39,11 +39,14 @@ start:                          ; The CODE entry point to the program
 loc_loop:
 	cmp 	eax, 10
 	je @F
+
+	; dbprint, print register eax
 	pushad
 	pushfd
 	print str$(eax), " eax", 13, 10
 	popfd
 	popad
+
 	inc	eax
 	jmp	loc_loop
 @@:
