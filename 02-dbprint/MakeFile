@@ -1,0 +1,15 @@
+NAME = dbprint
+EXE  = $(NAME).exe
+OBJS = $(NAME).obj
+
+CFLAG = /c /coff /Cp
+LFLAG = /subsystem:console
+
+$(EXE) : $(OBJS) 
+	link $(LFLAG) $(OBJS)
+
+.asm.obj:
+	ml $(CFLAG) $<
+
+clean:
+	del *.obj
