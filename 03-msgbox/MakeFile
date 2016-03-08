@@ -1,0 +1,15 @@
+NAME = msgbox
+EXE  = $(NAME).exe
+OBJS = $(NAME).obj
+
+CFLAG = /c /coff /Cp
+LFLAG = /subsystem:windows
+
+$(EXE) : $(OBJS) 
+	link $(LFLAG) $(OBJS)
+
+.asm.obj:
+	ml $(CFLAG) $<
+
+clean:
+	del *.obj
