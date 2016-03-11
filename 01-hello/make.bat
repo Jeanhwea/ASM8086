@@ -1,6 +1,6 @@
 @echo off
 rem global flags
-set MASM32PATH=c:\masm32
+set MASM32PATH=%CD:~,1%:\masm32
 set WORKPATH=%CD%
 rem other envs
 set INCLUEDE=%MASM32PATH%\Include;%INCLUEDE%
